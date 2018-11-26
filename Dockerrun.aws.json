@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVerizon" : 2,
+    "containerDefinitions" : [
+        {
+            "name": "client",
+            "image": "sekchaitanya/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "sekchaitanya/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "sekchaitanya/multi-server",
+            "hostname": "api",
+            "essential": false
+        },        
+        {
+            "name": "nginx",
+            "image": "sekchaitanya/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links" : ["client","server"]
+        }        
+    ]
+}
