@@ -21,3 +21,16 @@ after_success:
   - docker push sekchaitanya88/multi-server
   - docker push sekchaitanya88/multi-nginx
   - docker push sekchaitanya88/multi-nginx  
+
+deploy:
+  provider: elasticsearch
+  region: us-east-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-2-911626906306
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
