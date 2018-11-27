@@ -17,7 +17,7 @@
         },
         {
             "name": "worker",
-            "image": "sekchaitanya/multi-server",
+            "image": "sekchaitanya/multi-worker",
             "hostname": "api",
             "essential": false,
             "memory": 128
