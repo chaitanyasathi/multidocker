@@ -23,7 +23,7 @@ after_success:
   - docker push sekchaitanya88/multi-nginx  
 
 deploy:
-  provider: elasticbeanstack
+  provider: elasticbeanstalk
   region: us-east-2
   app: multi-docker
   env: MultiDocker-env
