@@ -20,7 +20,7 @@ after_success:
   - docker push chaitanyasathi/multi-client
   - docker push chaitanyasathi/multi-server
   - docker push chaitanyasathi/multi-nginx
-  - docker push chaitanyasathi/multi-nginx  
+  - docker push chaitanyasathi/multi-worker  
 
 deploy:
   provider: elasticbeanstalk
